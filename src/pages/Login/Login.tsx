@@ -6,7 +6,7 @@ const Login: React.FC = (): ReactElement => {
     <div>
       <NavLink />
       <h1>Login</h1>
-      <Button />
+      <Button>Button</Button>
     </div>
   );
 };

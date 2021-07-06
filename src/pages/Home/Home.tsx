@@ -13,7 +13,7 @@ const Home: React.FC = (): ReactElement => {
     <div>
       <NavLink />
       <h1>Home</h1>
-      <Button />
+      <Button>Button</Button>
     </div>
   );
 };

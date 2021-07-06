@@ -1,11 +1,11 @@
 import React, { ReactElement } from 'react';
-import { Link } from 'react-router-dom';
+import { StyledLink } from './styles';
 
 const NavLink: React.FC = (): ReactElement => {
   return (
     <div>
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
+      <StyledLink to="/">Home</StyledLink>
+      <StyledLink to="/login">Login</StyledLink>
     </div>
   );
 };

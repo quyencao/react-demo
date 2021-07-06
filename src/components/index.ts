@@ -1,4 +1,4 @@
-import Button from './Button/Button';
-import NavLink from './NavLink/NavLink';
+import Button from './Button';
+import NavLink from './NavLink';
 
 export { Button, NavLink };
