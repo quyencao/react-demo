@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect } from 'react';
-import { Button, NavLink } from './../../components';
 import { hello } from './../../services';
 
 const Home: React.FC = (): ReactElement => {
@@ -10,11 +9,9 @@ const Home: React.FC = (): ReactElement => {
   }, []);
 
   return (
-    <div>
-      <NavLink />
-      <h1>Home</h1>
-      <Button>Button</Button>
-    </div>
+    <>
+      <h4>つくばみらい 患者一覧</h4>
+    </>
   );
 };
 
