@@ -16,8 +16,8 @@ import {
 import { SideBarContainer } from './styles/SideBar';
 import { MainContentContainer, PageContent } from './styles/MainContent';
 import SideBarContent from './styles/SideBarContent';
-import BarIcon from './../../assets/images/bar-icon.svg';
-import UserIcon from './../../assets/images/user-icon.svg';
+import BarIcon from 'src/assets/images/bar-icon.svg';
+import UserIcon from 'src/assets/images/user-icon.svg';
 
 const LayoutContainer = styled.div`
   background-color: #f3f6f9;

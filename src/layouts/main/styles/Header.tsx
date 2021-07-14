@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   right: 0;
   left: 0;
   z-index: 1002;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.white};
 `;
 
 export const NavbarHeader = styled.div`

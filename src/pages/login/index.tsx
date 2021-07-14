@@ -8,8 +8,8 @@ import {
   ButtonContainer,
   Button,
   Logo,
-} from './../../components/Form';
-import LogoIcon from './../../assets/images/logo.png';
+} from 'src/components/Form';
+import LogoIcon from 'src/assets/images/logo.png';
 
 const Login: React.FC = (): ReactElement => {
   return (

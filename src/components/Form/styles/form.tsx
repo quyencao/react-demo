@@ -28,7 +28,7 @@ export const Input = styled.input`
   width: 100%;
   margin-bottom: 20px;
   height: 43px;
-  background: #ffffff;
+  background: ${({ theme }) => theme.colors.white};
   border: 1px solid #ced4da;
   box-sizing: border-box;
   border-radius: 4.8px;
@@ -62,6 +62,6 @@ export const Button = styled.button`
   font-weight: normal;
   font-size: 18px;
   line-height: 26px;
-  color: #ffffff;
+  color: ${({ theme }) => theme.colors.white};
   cursor: pointer;
 `;

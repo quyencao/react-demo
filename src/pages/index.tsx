@@ -1,4 +1,4 @@
-import Home from './Home/Home';
-import Login from './Login/Login';
+import Home from './home';
+import Login from './login';
 
 export { Home, Login };

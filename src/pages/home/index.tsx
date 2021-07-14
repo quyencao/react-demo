@@ -1,5 +1,5 @@
 import React, { ReactElement, useEffect } from 'react';
-import { HighlightDate } from './../../components/Datepicker/HighlightDate';
+import { HighlightDate } from 'src/components/Datepicker/HighlightDate';
 import { getMe } from 'src/services';
 
 const Home: React.FC = (): ReactElement => {
