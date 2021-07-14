@@ -1,12 +1,19 @@
 import React, { ReactElement, useEffect } from 'react';
-import { hello } from './../../services';
 import { HighlightDate } from './../../components/Datepicker/HighlightDate';
+import { getMe } from 'src/services';
 
 const Home: React.FC = (): ReactElement => {
+  const getUser = async () => {
+    try {
+      const { data } = await getMe();
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   useEffect(() => {
-    hello('hello')
-      .then((res) => console.log(res.getStatus()))
-      .catch((error) => console.log('errr', error));
+    getUser();
   }, []);
 
   return (
