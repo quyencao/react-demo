@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { SideBarProps } from './types';
 
 export const HeaderContainer = styled.div`
   position: fixed;
@@ -23,10 +24,11 @@ export const NavbarHeaderItem = styled.div`
   height: 100%;
 `;
 
-export const NavbarBrandBox = styled.div`
-  padding: 0 1.5rem;
-  width: 250px;
+export const NavbarBrandBox = styled.div<SideBarProps>`
+  padding: ${({ isOpenMenu }) => (isOpenMenu ? '0 1.5rem' : '0')};
+  width: ${({ isOpenMenu }) => (isOpenMenu ? '250px' : '0')};
   background-color: #343a3f;
+  transition: all 0.5s ease;
 `;
 
 export const ToggleMenuButton = styled(Button)`

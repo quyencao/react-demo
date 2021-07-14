@@ -3,7 +3,13 @@ import { Collapse } from 'reactstrap';
 import Icon from '@mdi/react';
 import { mdiChevronDown } from '@mdi/js';
 import clsx from 'clsx';
-import * as SideBar from './SideBar';
+import {
+  SideBarMenuContainer,
+  SideMenu,
+  SideMenuLi,
+  SideMenuButton,
+  SideMenuLink,
+} from './SideBar';
 
 const SideBarContent: React.FC = (): ReactElement => {
   const [collapse, setCollapse] = useState(false);
@@ -13,10 +19,10 @@ const SideBarContent: React.FC = (): ReactElement => {
   };
 
   return (
-    <SideBar.SideBarMenuContainer id="sidebar-menu">
-      <SideBar.SideMenu className="list-unstyled">
-        <SideBar.SideMenuLi>
-          <SideBar.SideMenuButton
+    <SideBarMenuContainer id="sidebar-menu">
+      <SideMenu className="list-unstyled">
+        <SideMenuLi>
+          <SideMenuButton
             color="none"
             type="button"
             onClick={toggleMenu}
@@ -31,26 +37,26 @@ const SideBarContent: React.FC = (): ReactElement => {
               rotate={collapse ? -180 : -90}
               color={collapse ? '#FFFFFF' : '#C2C7D0'}
             />
-          </SideBar.SideMenuButton>
+          </SideMenuButton>
           <Collapse isOpen={collapse}>
-            <SideBar.SideMenu className="sub-menu">
-              <SideBar.SideMenuLi>
-                <SideBar.SideMenuLink to="/">つくばみらい</SideBar.SideMenuLink>
-              </SideBar.SideMenuLi>
-              <SideBar.SideMenuLi>
-                <SideBar.SideMenuLink to="/">いといがわ</SideBar.SideMenuLink>
-              </SideBar.SideMenuLi>
-            </SideBar.SideMenu>
+            <SideMenu className="sub-menu">
+              <SideMenuLi>
+                <SideMenuLink to="/">つくばみらい</SideMenuLink>
+              </SideMenuLi>
+              <SideMenuLi>
+                <SideMenuLink to="/">いといがわ</SideMenuLink>
+              </SideMenuLi>
+            </SideMenu>
           </Collapse>
-        </SideBar.SideMenuLi>
-        <SideBar.SideMenuLi>
-          <SideBar.SideMenuLink to="/">アカウント一覧</SideBar.SideMenuLink>
-        </SideBar.SideMenuLi>
-        <SideBar.SideMenuLi>
-          <SideBar.SideMenuLink to="/">患者インポート</SideBar.SideMenuLink>
-        </SideBar.SideMenuLi>
-      </SideBar.SideMenu>
-    </SideBar.SideBarMenuContainer>
+        </SideMenuLi>
+        <SideMenuLi>
+          <SideMenuLink to="/">アカウント一覧</SideMenuLink>
+        </SideMenuLi>
+        <SideMenuLi>
+          <SideMenuLink to="/">患者インポート</SideMenuLink>
+        </SideMenuLi>
+      </SideMenu>
+    </SideBarMenuContainer>
   );
 };
 

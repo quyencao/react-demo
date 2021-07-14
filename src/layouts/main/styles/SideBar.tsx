@@ -1,15 +1,17 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
+import { SideBarProps } from './types';
 
-export const SideBarContainer = styled.div`
-  width: 250px;
+export const SideBarContainer = styled.div<SideBarProps>`
+  width: ${({ isOpenMenu }) => (isOpenMenu ? '250px' : '0')};
   z-index: 1001;
   background-color: #343a3f;
   bottom: 0;
   margin-top: 0;
   position: fixed;
   top: 56px;
+  transition: all 0.5s ease;
 `;
 
 export const SideBarMenuContainer = styled.div`

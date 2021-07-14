@@ -25,6 +25,7 @@ const LayoutContainer = styled.div`
 
 const Layout: React.FC = ({ children }): ReactElement => {
   const [isOpen, setOpen] = useState(false);
+  const [isOpenMenu, setOpenMenu] = useState(true);
 
   const handleToggleOpenDropdown = () => {
     setOpen(!isOpen);
@@ -38,13 +39,21 @@ const Layout: React.FC = ({ children }): ReactElement => {
     setOpen(false);
   };
 
+  const toggleMenu = () => {
+    setOpenMenu(!isOpenMenu);
+  };
+
   return (
     <LayoutContainer>
       <HeaderContainer>
         <NavbarHeader>
           <NavbarHeaderItem className="d-flex">
-            <NavbarBrandBox />
-            <ToggleMenuButton size="sm" color="none" type="button">
+            <NavbarBrandBox isOpenMenu={isOpenMenu} />
+            <ToggleMenuButton
+              size="sm"
+              color="none"
+              type="button"
+              onClick={toggleMenu}>
               <ToggleMenuIcon src={BarIcon} />
             </ToggleMenuButton>
           </NavbarHeaderItem>
@@ -66,10 +75,10 @@ const Layout: React.FC = ({ children }): ReactElement => {
           </NavbarHeaderItem>
         </NavbarHeader>
       </HeaderContainer>
-      <SideBarContainer className="h-100">
-        <SideBarContent />
+      <SideBarContainer className="h-100" isOpenMenu={isOpenMenu}>
+        {isOpenMenu && <SideBarContent />}
       </SideBarContainer>
-      <MainContentContainer>
+      <MainContentContainer isOpenMenu={isOpenMenu}>
         <PageContent>{children}</PageContent>
       </MainContentContainer>
     </LayoutContainer>
