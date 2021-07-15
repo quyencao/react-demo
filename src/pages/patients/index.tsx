@@ -2,6 +2,10 @@ import React, { ReactElement } from 'react';
 import Title from './title';
 import SearchTextbox from './search-textbox';
 import Select from './select';
+import Button from './button';
+import { mdiPlus } from '@mdi/js';
+import Icon from '@mdi/react';
+import { mdiSync } from '@mdi/js';
 
 const options = [
   { value: 'all', label: '全て' },
@@ -21,6 +25,18 @@ const Patients: React.FC = (): ReactElement => {
         isSearchable={false}
         defaultValue={{ value: 'all', label: '全て' }}
       />
+      <p className="mt-2"></p>
+      <div style={{ width: '116px' }}>
+        <Button color="primary">
+          <Icon path={mdiPlus} size={0.95} vertical color="white" />
+          <span>登録する</span>
+        </Button>
+        <p className="mt-2"></p>
+        <Button color="secondary">
+          <Icon path={mdiSync} size={0.95} vertical color="white" rotate={90} />
+          <span>更新する</span>
+        </Button>
+      </div>
     </>
   );
 };
