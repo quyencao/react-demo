@@ -36,6 +36,10 @@ export const Input = styled.input`
   font-weight: 400;
   font-size: 18px;
   padding-left: 16px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const StyledLink = styled(Link)`

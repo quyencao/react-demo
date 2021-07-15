@@ -1,4 +1,5 @@
 import Home from './home';
 import Login from './login';
+import Patients from './patients';
 
-export { Home, Login };
+export { Home, Login, Patients };
