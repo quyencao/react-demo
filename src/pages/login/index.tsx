@@ -1,14 +1,8 @@
 import React, { ReactElement } from 'react';
+import LoginForm from 'src/components/loginForm';
 
 const Login: React.FC = (): ReactElement => {
-  return (
-    <>
-      <h1>Login</h1>
-      <div style={{ marginTop: '20px' }}>
-        <input />
-      </div>
-    </>
-  );
+  return <LoginForm />;
 };
 
 export default Login;
