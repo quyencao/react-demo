@@ -3,8 +3,8 @@ import React, { ReactElement, Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import { configRoutes } from './configs';
-import { RestrictedRoute } from 'src/components';
 import { GlobalStyle } from 'src/styles/GlobalStyles';
+import RestrictedRoute from 'src/components/restrictedRoute';
 
 const IndexRouter: React.FC = (): ReactElement => {
   return (
