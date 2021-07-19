@@ -1,6 +1,9 @@
 import React, { ReactElement, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Home, Login } from 'src/pages';
+
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import { configRoutes } from './configs';
+import { RestrictedRoute } from 'src/components';
 import { GlobalStyle } from 'src/styles/GlobalStyles';
 
 const IndexRouter: React.FC = (): ReactElement => {
@@ -8,10 +11,21 @@ const IndexRouter: React.FC = (): ReactElement => {
     <Router>
       <GlobalStyle />
       <Suspense fallback={<p>Loading...</p>}>
-        <Switch>
-          <Route path="/login" exact component={Login} />
-          <Route path="/" exact component={Home} />
-        </Switch>
+        {configRoutes.map(({ appRoutes, isPrivate, layout: MainLayout }) => {
+          return appRoutes.map(({ children, path, layout, ...props }, idx) => {
+            return (
+              <RestrictedRoute
+                key={idx}
+                exact
+                isPrivate={isPrivate}
+                path={path}
+                layout={layout || MainLayout}
+                {...props}>
+                {children}
+              </RestrictedRoute>
+            );
+          });
+        })}
       </Suspense>
     </Router>
   );
