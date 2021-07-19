@@ -2,7 +2,7 @@ import axios from 'axios';
 
 import { localStorageHelper } from 'src/utils';
 
-import { httpStatus } from './http-status';
+import { httpStatus } from './httpStatus';
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = "http://45.77.170.201:7999/api";
 // axios.defaults.headers.common["Authorization"] = window.localStorage.getItem("jwt");

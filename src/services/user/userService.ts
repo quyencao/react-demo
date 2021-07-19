@@ -1,9 +1,9 @@
 import { AxiosRequestConfig } from 'axios';
 
-import httpClient from 'src/configs/http-client';
+import httpClient from 'src/configs/httpClient';
 import { IResponse } from 'src/types';
 
-import { IUser } from './user.interface';
+import { IUser } from './user';
 
 export const getMe = async (config?: AxiosRequestConfig) => {
   return httpClient.get<IResponse<IUser>>(
@@ -11,3 +11,5 @@ export const getMe = async (config?: AxiosRequestConfig) => {
     config
   );
 };
+
+export type { IUser };

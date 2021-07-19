@@ -1,5 +1,4 @@
 import React, { ReactElement, useEffect } from 'react';
-import { HighlightDate } from 'src/components/Datepicker/HighlightDate';
 import { getMe } from 'src/services';
 
 const Home: React.FC = (): ReactElement => {
@@ -19,7 +18,6 @@ const Home: React.FC = (): ReactElement => {
   return (
     <>
       <h4>つくばみらい 患者一覧</h4>
-      <HighlightDate />
     </>
   );
 };
